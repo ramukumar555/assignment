@@ -1,0 +1,42 @@
+.carousel-item{
+    min-height: 550px;
+	max-height: 500px
+}
+.carousel-caption {
+  color: #fff;
+}
+.navbar-brand{
+	font-size: 50px;
+	font-family: 'Brush Script MT', cursive;
+}
+.carousel-caption {
+  background: #212529 !important;
+  opacity: 0.75;
+}
+.row{
+	padding-top:10px;
+	padding-bottom:10px;
+}
+.ms-auto {
+  margin-left: auto !important;
+}
+@media (min-width: 1400px){
+.container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+  max-width: 1320px;
+}
+}
+[class^="col-"], [class*=" col-"] {
+  padding: 15px;
+}
+.table thead th {
+  border-bottom: 2px solid wheat;
+}
+.table td, .table th {
+  border-top: 1px solid wheat;
+}
+.table {
+  color: wheat;
+}
+.payasugo, .allinclusive{
+	display: display;
+}
