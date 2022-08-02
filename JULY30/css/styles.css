@@ -34,9 +34,21 @@
 .table td, .table th {
   border-top: 1px solid wheat;
 }
-.table {
+.table{
   color: wheat;
 }
+.dinCal{
+  color: black;
+}
+.dinCal thead th {
+  border-bottom: 2px solid black;
+}
+.dinCal td, .dinCal th {
+  border-top: 1px solid black;
+}
 .payasugo, .allinclusive{
-	display: display;
+	display: none;
+}
+#payasugoid, #allinclusiveid{
+	padding: 15px;
 }

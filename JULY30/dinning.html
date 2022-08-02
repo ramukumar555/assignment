@@ -32,8 +32,19 @@
 						<div class="d-flex justify-content-center h1"> 							
 								Available Dinning Options
 						</div>
-						<form class="row g-3 needs-validation" id="dinning" method="post" novalidate>
-						</form>
+						
+						
+						<div class="col-md-12">
+							<label for="roomtype" class="form-label">Select the Dinning Option</label>
+							<div id="payasugoid">
+							  <input class="form-check-input" type="radio" name="roomtype" id="payasugo" value="payasugo" required>
+							  <label class="form-check-label" for="inlineRadio1">Pay As You Go</label>
+							</div>
+							<div id="allinclusiveid">
+							  <input class="form-check-input" type="radio" name="roomtype" id="allinclusive" value="allinclusive" required>
+							  <label class="form-check-label" for="inlineRadio2">All-Inclusive</label>
+							</div>
+						</div>
 						<div class="col-12 payasugo">
 							<table class="table table-image">
 							  <thead>
@@ -68,7 +79,7 @@
 							<table class="table table-image">
 							  <thead>
 								<tr>
-								  <th scope="col-4">Plan</th>
+								  <th scope="col-4" >Plan</th>
 								  <th scope="col-4">Adult</th>
 								  <th scope="col-4">Child</th>
 
@@ -76,28 +87,102 @@
 							  </thead>
 							  <tbody>
 								<tr>
-								  <th scope="row">1</th>
-								  <td class="w-25">
-									  <img src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/sheep-3.jpg" class="img-fluid img-thumbnail" alt="Sheep">
+								  <th class="col-4" scope="row">Basic</th>
+								  <td class="col-4">
+										$62.5 / Day
 								  </td>
-								  <td>Bootstrap 4 CDN and Starter Template</td>
+								  <td class="col-4">$49.99 / Day</td>
 
 								</tr>
 								<tr>
-								  <th scope="row">2</th>
-								  <td class="w-25">
-									  <img src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/sheep-5.jpg" class="img-fluid img-thumbnail" alt="Sheep">
+								  <th class="col-4" scope="row">Premium(incl drinks)</th>
+								  <td class="col-4">
+									  $80 / Day
 								  </td>
-								  <td>Bootstrap Grid 4 Tutorial and Examples</td>
-
+								  <td class="col-4">$49.99 / Day</td>
 								</tr>
 							  </tbody>
 							</table>   
+							<form class="row g-3 needs-validation" id="dinning" method="post" novalidate>
+							<div class="col-12">
+								<label for="code" class="form-label">Please Enter your Reservation code to Caluculate the expected Dinning Costs.</label>
+								<input type="text" class="form-control" id="code"  required>
+							</div>
+							<div class="col-12">
+								<button class="btn btn-primary" type="submit">Caluculate Now</button>
+							</div>
+							</form>
 						</div>
-					
+
 					</div>
                  </div>
             </header>
+			<div class="modal fade" id="WrongRoomModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			  <div class="modal-dialog" role="document">
+				<div class="modal-content">
+				  <div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">Error</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					  <span aria-hidden="true">&times;</span>
+					</button>
+				  </div>
+				  <div class="modal-body" id="WrongRoom">
+					Kindly Check the Reservation Code
+				  </div>
+				  <div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+				  </div>
+				</div>
+			  </div>
+			</div>
+			<div class="modal fade" id="DinningModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			  <div class="modal-dialog modal-xl" role="document">
+				<div class="modal-content">
+				  <div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">Dinning Caluculation</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					  <span aria-hidden="true">&times;</span>
+					</button>
+				  </div>
+				  <div class="modal-body" id="ReserveCode">
+				  <label for="code" class="form-label">based on the given information provided, below is the total price for Basic and Premium Packages.</label>
+					<table class="table table-image dinCal">
+							  <thead>
+								<tr>
+								  <th scope="col-3" >Plan</th>
+								  <th scope="col-3">Adult Total Price </th>
+								  <th scope="col-3">Child Total Price </th>
+								  <th scope="col-3">Total Price </th>
+								</tr>
+							  </thead>
+							  <tbody>
+								<tr>
+								  <th class="col-3" scope="row">Basic</th>
+								  <td class="col-3" >
+										$<span id="BATP"></span> / Day
+								  </td>
+								  <td class="col-3" >$<span id="BCTP"></span> / Day</td>
+								  <td class="col-3" >$<span id="BTP"></span> / Day</td>
+								</tr>
+								<tr>
+								  <th class="col-3" scope="row">Premium(incl drinks)</th>
+								  <td class="col-3" >
+									  $<span id="PATP"></span> / Day
+								  </td>
+								  <td class="col-3" >$<span id="PCTP"></span> / Day</td>
+								  <td class="col-3" >$<span id="PTP"></span> / Day</td>
+								</tr>
+							  </tbody>
+							</table>   
+							
+				  </div>
+				  <div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+				  </div>
+				</div>
+			  </div>
+			</div>
+        
 		<footer class="bg-dark py-4 mt-auto">
             <div class="container px-5">
                 <div class="row align-items-center justify-content-between flex-column flex-sm-row">

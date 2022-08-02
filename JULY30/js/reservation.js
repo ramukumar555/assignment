@@ -55,9 +55,8 @@
 					let output = "<p>The Room rent is $"+roomTotal+"<br>Discount applied is $"+discount+"<br>Price after discount is $"+afterDiscountTotal+"<br>Tax applied is $"+taxTotal+"<br>Total cost of the stay is $"+stayTotal+"<br>Your Confirmation code is "+code+"</p>";
 					$('#ReserveCode').html(output);
 					$('#ReserveCodeModal').modal('show');
-					console.log();
 				}
-				console.log();
+
 			}
 		
 
